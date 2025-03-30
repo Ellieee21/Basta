@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory POS Proware</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background: linear-gradient(to right, #002b80, #d1a400);
+            height: 100vh;
+            color: white;
+        }
+        .text-section {
+            width: 50%;
+            padding-left: 50px;
+        }
+        .text-section h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+        .text-section span {
+            color: #00bfff;
+            font-weight: bold;
+        }
+        .text-section .proware {
+            color: #ffd700;
+        }
+        .login-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: navy;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .login-btn:hover {
+            background: #0055ff;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-section">
+            <h1><span>Inventory</span> Point of Sale <span class="proware">Proware</span></h1>
+            <a href="#" class="login-btn">Log In</a>
+        </div>
+        <div class="image-section">
+            <img src="your-image.jpg" alt="POS System">
+        </div>
+    </div>
+</body>
+</html>
