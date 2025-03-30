@@ -1,2 +1,0 @@
-# Basta
-Try ngani
