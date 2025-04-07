@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To My Player One</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #1e1e1e;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ff6b6b;
+    }
+    section {
+      margin: 40px 0;
+    }
+    .terminal {
+      background-color: #000;
+      padding: 20px;
+      border-radius: 8px;
+      color: #33ff33;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .card {
+      background: #333;
+      width: 150px;
+      height: 150px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+    .card-front {
+      background: #555;
+    }
+    .card-back {
+      background: #ff6b6b;
+      transform: rotateY(180deg);
+    }
+    .open-when button {
+      margin: 10px;
+      padding: 10px 20px;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .quest, .patch, .achievements, .countdown {
+      background: #2e2e2e;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    code {
+      background: #111;
+      padding: 5px;
+      display: block;
+      border-left: 3px solid #ff6b6b;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To My Player One</h1>
+
+  <!-- Terminal -->
+  <section class="terminal">
+    <h2>Love Terminal</h2>
+    <code>git status</code>
+    <p>→ Still in love with you.</p>
+    <code>npm install hugs</code>
+    <p>→ Hugs installed successfully!</p>
+    <code>./date.sh</code>
+    <p>→ Loading... Ready for our next night together.</p>
+  </section>
+
+  <!-- Flip Cards -->
+  <section>
+    <h2>Why I Love You</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Reason 1</div>
+          <div class="card-back">You make me laugh every day</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">Reason 2</div>
+          <div class="card-back">You’re my favorite teammate</div>
+        </div>
+      </div>
+      <!-- Add more cards if you want -->
+    </div>
+  </section>
+
+  <!-- Open When -->
+  <section class="open-when">
+    <h2>Open When…</h2>
+    <button onclick="alert('I miss you too. Here’s a virtual hug!')">You Miss Me</button>
+    <button onclick="alert('Don’t worry. You got this. I believe in you.')">You're Feeling Down</button>
+    <button onclick="alert('Surprise! You mean the world to me.')">You Want a Surprise</button>
+  </section>
+
+  <!-- Quest Board -->
+  <section class="quest">
+    <h2>Love Quest Board</h2>
+    <ul>
+      <li>Help your girlfriend pick dinner</li>
+      <li>Surprise her with a forehead kiss</li>
+      <li>Laugh at her bad jokes (extra XP)</li>
+      <li>Win a round of Sausage Man together</li>
+    </ul>
+  </section>
+
+  <!-- Patch Notes -->
+  <section class="patch">
+    <h2>Patch Notes</h2>
+    <code>v1.0.0 - First Date Released</code>
+    <code>v1.2.3 - Added daily good mornings</code>
+    <code>v1.5.0 - Sausage Man became a bonding ritual</code>
+    <code>Upcoming: More cuddles. More late-night chats.</code>
+  </section>
+
+  <!-- Achievements -->
+  <section class="achievements">
+    <h2>Achievements Unlocked</h2>
+    <ul>
+      <li>“First I Love You” - Unlocked</li>
+      <li>“Sausage Carry” - Unlocked</li>
+      <li>“Best Programmer BF” - Legendary</li>
+    </ul>
+  </section>
+
+  <!-- Programmer Love Code -->
+  <section>
+    <h2>Love in Code</h2>
+    <code>
+      const boyfriend = {<br>
+        name: "My Favorite Person",<br>
+        skills: ["Gaming", "Coding", "Loving Me"],<br>
+        rank: "Legendary"<br>
+      };
+    </code>
+  </section>
+
+  <!-- Countdown Timer -->
+  <section class="countdown">
+    <h2>Countdown to Next Hangout</h2>
+    <p id="timer"></p>
+  </section>
+
+  <script>
+    // Countdown to a date (example: April 14, 2025)
+    const targetDate = new Date("April 14, 2025 18:00:00").getTime();
+    const timer = document.getElementById("timer");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        timer.innerHTML = "Time to hang out!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timer.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
