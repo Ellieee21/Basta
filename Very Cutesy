@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POS Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #525FE1;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+    .nav-item {
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .nav-item:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .nav-item.dashboard {
+      background-color: white;
+      color: #525FE1;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      font-weight: bold;
+    }
+    .nav-item.bold {
+      font-weight: bold;
+    }
+    .nav-bottom {
+      margin-top: auto;
+    }
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+    .header {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #525FE1;
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+    }
+    .card {
+      flex: 1;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .card-number {
+      font-size: 32px;
+      font-weight: bold;
+      color: #FFA41B;
+    }
+    .card-label {
+      margin-top: 10px;
+      font-size: 16px;
+      color: purple;
+    }
+    .low-stock {
+      color: #F86F03;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div>
+      <div class="nav-item dashboard">Dashboard</div>
+      <div class="nav-item"><span>📦</span>Point of Sale</div>
+      <div class="nav-item bold"><span>📦</span>Inventory</div>
+      <div class="nav-item"><span>📊</span>Stock Management</div>
+      <div class="nav-item"><span>🕘</span>History</div>
+    </div>
+    <div class="nav-bottom">
+      <div class="nav-item"><span>👤</span>Accounts</div>
+      <div class="nav-item"><span>🚪</span>Log out</div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="header">Sales Activity</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-number">100</div>
+        <div class="card-label">Total Stocks</div>
+      </div>
+      <div class="card">
+        <div class="card-number">100</div>
+        <div class="card-label">Total Stocks</div>
+      </div>
+      <div class="card">
+        <div class="card-number" style="color:#F86F03">3</div>
+        <div class="card-label low-stock">Low stocks</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
